@@ -4,15 +4,15 @@ fs.readFile('./input.txt', function(err, data) {
     if (err) throw err;
     // Format Data
     let boxData = data.toString()
-    .split("\n")
-    .map(function(num) { 
-        num = num.split('x');
-        // no idea why map forcefully returns a String type..
-        for(var i in num) {
-            num[i] = parseInt(num[i]);
-        }
-        return num;
-    });
+        .split("\n")
+        .map(function(num) { 
+            num = num.split('x');
+            // no idea why map forcefully returns a String type..
+            for(var i in num) {
+                num[i] = parseInt(num[i]);
+            }
+            return num;
+        });
     // Calculate Num Sqr Ft of Wrapping Paper
     let numSqrFtWrapping = boxData.reduce(function(a1, a2, index) {
         function calculate(args) {
